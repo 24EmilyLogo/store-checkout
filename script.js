@@ -12,7 +12,20 @@ const itemsCatalog = {
     multiportAdapter:["X0032YGP2T", "Multiport Adapter", 25.99],
     scissors:["B07G6JT1XS", "Scissors", 23.99],
     iOSprgmngTxtbook:["9780134682334", "iOS Programming Textbook", 119.99],
-    spiralNotebook:["718103230759", "Spiral Notebook", 1.99]
+    spiralNotebook:["718103230759", "Spiral Notebook", 1.99],
+    smolHuman:["551943", "Pocketsized Human", 4.99],
+    //Okay, so I got this idea because a joke about me 
+    //being "pocketsized for your convenience" then 
+    //I thought about the items by checkouts
+    //so I priced myself roughly at what that costs    
+    //On the other one it's just $0.01 so I can be bought in bulk lol :D
 }
+/*
+    Replace "It's empty here..." with the cart items
+        //
+    As the items are added update the Subtotal
+    On Checkout print the Total
+*/
+
 // MEeP
 /* meEp */

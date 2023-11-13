@@ -1,11 +1,22 @@
-h1{
+h1, h2{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align:center;
 }
 p{
-    display: inline-block;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.addItemArea p{
+    display: inline-block;
 }
 input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+button{
+    background-color:seagreen;
+    color:white;
+    border-radius:5px;
+    padding:5px;
+}
+#cartEmpty{
+    text-align: center;
 }

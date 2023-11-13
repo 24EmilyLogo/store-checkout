@@ -10,13 +10,19 @@
 </head>
 <body>
     <h1>Checkout</h1>
-    <div>
-        <p>Scan Barcode</p>
+    <div class="addItemArea">
+        <p>Scan Barcode:</p>
         <input type="text" id="barcodeInput"><br>
         <p>Quantity:</p>
         <input type="number" id="numOfItems"><br>
-        <button id="checkoutButton">Checkout</button>
+        <button id="addCartButton">Add to Cart</button>
     </div>
-    <div id="itemChkoutLs"></div>
+    <h2>Cart</h2>
+    <div id="itemCartLs">
+        <p id="cartEmpty">It's empty here...</p>
+    </div>
+    <p>Subtotal:</p>
+    <button id="checkoutButton">Checkout</button>
+    <div id="totalPtax"></div>
 </body>
 </html>
