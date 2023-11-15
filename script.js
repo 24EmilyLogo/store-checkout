@@ -1,28 +1,95 @@
 const itemsCatalog = {
-    jsTxtbook:["689145740844", "JavaScript Textbook", 34.95],
-    xeroxPaper:["4549292070248", "Xerox Paper", 10.99],
-    firstAidKit:["092265222983", "First Aid Kit", 20.99],
-    boxOfPencils:["X002ELVL3J", "Box of Pencils (50ct.)", 15.99],
-    sanitizingWipes:["686024002468", "Sanitizing Wipes", 10.99],
-    n95Facemasks:["860004186236", "N95 Face Masks", 15.99],
-    kleenex:["036000214000","Kleenex", 3.99],
-    handSanitizer:["8809693254156", "Hand Sanitizer", 7.99],
-    printerPaper:["036500060480", "Printer Paper", 9.99],
-    brushPens:["085014561877", "Brush Pens", 10.99],
-    multiportAdapter:["X0032YGP2T", "Multiport Adapter", 25.99],
-    scissors:["B07G6JT1XS", "Scissors", 23.99],
-    iOSprgmngTxtbook:["9780134682334", "iOS Programming Textbook", 119.99],
-    spiralNotebook:["718103230759", "Spiral Notebook", 1.99],
-    smolHuman:["551943", "Pocketsized Human", 4.99],
-    //Okay, so I got this idea because a joke about me 
+    "689145740844":{
+        itemName:"JavaScript Textbook", 
+        price:34.95
+    },
+    "4549292070248":{
+        itemName:"Xerox Paper", 
+        price:10.99
+    },
+    "092265222983":{
+        itemName:"First Aid Kit", 
+        price:20.99
+    },
+    "X002ELVL3J":{
+        itemName:"Box of Pencils (50ct.)", 
+        price:15.99
+    },
+    "686024002468":{
+        itemName:"Sanitizing Wipes", 
+        price:10.99
+    },
+    "860004186236":{
+        itemName:"N95 Face Masks", 
+        price:15.99
+    },
+    "036000214000":{
+        itemName:"Kleenex", 
+        price:3.99
+    },
+    "8809693254156":{
+        itemName:"Hand Sanitizer", 
+        price:7.99
+    },
+    "036500060480":{
+        itemName:"Printer Paper", 
+        price:9.99
+    },
+    "085014561877":{
+        itemName:"Brush Pens", 
+        price:10.99
+    },
+    "X0032YGP2T":{
+        itemName:"Multiport Adapter", 
+        price:25.99
+    },
+    "B07G6JT1XS":{
+        itemName:"Scissors", 
+        price:23.99
+    },
+    "9780134682334":{
+        itemName:"iOS Programming Textbook", 
+        price:119.99
+    },
+    "718103230759":{
+        itemName:"Spiral Notebook", 
+        price:1.99
+    },
+    "551943":{
+        itemName:"Pocketsized Human", 
+        price:4.99
+    },
+    //I got this idea because a joke about me 
     //being "pocketsized for your convenience" then 
     //I thought about the items by checkouts
-    //so I priced myself roughly at what that costs    
-    //On the other one it's just $0.01 so I can be bought in bulk lol :D
+    //so I priced myself roughly at what those cost   
+    //On Ishita's it's $0.01 so I can be bought in bulk lol :D
+}
+//1a
+let cartEmptyTxt = document.getElementById("cartEmpty")
+//1b
+let cartLs = document.getElementById("itemCartLs")
+//1c
+let barcodeInputs = document.getElementById("barcodeInput")
+
+function findItem(){
+    if(itemsCatalog.hasOwnProperty()){
+
+    }
 }
 /*
     Replace "It's empty here..." with the cart items
-        //
+        //1. make var to hold 
+            //a. the cartEmpty id
+            //b. the itemCartLs id
+            //c. barcodeInput
+        //2. depending on what barcode is inputted,
+             delete cartEmpty text and:
+            //a. If the barcode is registered, list
+                 the Item, Quantity, and Price
+            //b. If not, alert that the barcode isn't
+                 registered
+        //3. 
     As the items are added update the Subtotal
     On Checkout print the Total
 */
