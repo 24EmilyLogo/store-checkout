@@ -75,27 +75,28 @@ let addToCart = document.getElementById("addCartButton")
 function findItem(){
     if(numItems <= 0){
         alert("You need to have at least one Item to add it to the cart")
-    }
-    else if(numItems > 0){
-        if(itemsCatalog.hasOwnProperty()){
+    }else if(numItems > 0){
+        if(itemsCatalog.hasOwnProperty(barcodeInputs)){
+            //
+        }else{
             //
         }
-    else{
-        alert("Please input an amount greater than 0")
-    }
+    }else{
+        alert("Please input a quantity greater than 0")
     }
 }
 addToCart.addEventListener("click", findItem)
 /*
     Replace "It's empty here..." with the cart items
         //1. make too many variables
-        //2. depending on what barcode is inputted,
+        //2. make a function to run onclick for add to cart
+        //3. depending on what barcode is inputted,
              delete cartEmpty text and:
             //a. If the barcode is registered, list
                  the Item, Quantity, and Price
             //b. If not, alert that the barcode isn't
                  registered
-        //3. 
+        //4. 
     As the items are added update the Subtotal
     On Checkout print the Total
 */
