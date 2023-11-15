@@ -12,10 +12,13 @@ input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 button{
-    background-color:rgb(0, 153, 36);
+    background-color:#009924;
     color:white;
     border-radius:5px;
     padding:5px;
+}
+button:hover{
+    background-color: #3fc20f;
 }
 #cartEmpty{
     text-align: center;

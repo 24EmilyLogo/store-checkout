@@ -65,24 +65,30 @@ const itemsCatalog = {
     //so I priced myself roughly at what those cost   
     //On Ishita's it's $0.01 so I can be bought in bulk lol :D
 }
-//1a
+//1
 let cartEmptyTxt = document.getElementById("cartEmpty")
-//1b
 let cartLs = document.getElementById("itemCartLs")
-//1c
 let barcodeInputs = document.getElementById("barcodeInput")
+let numItems = document.getElementById("numOfItems")
+let addToCart = document.getElementById("addCartButton")
 
 function findItem(){
-    if(itemsCatalog.hasOwnProperty()){
-
+    if(numItems <= 0){
+        alert("You need to have at least one Item to add it to the cart")
+    }
+    else if(numItems > 0){
+        if(itemsCatalog.hasOwnProperty()){
+            //
+        }
+    else{
+        alert("Please input an amount greater than 0")
+    }
     }
 }
+addToCart.addEventListener("click", findItem)
 /*
     Replace "It's empty here..." with the cart items
-        //1. make var to hold 
-            //a. the cartEmpty id
-            //b. the itemCartLs id
-            //c. barcodeInput
+        //1. make too many variables
         //2. depending on what barcode is inputted,
              delete cartEmpty text and:
             //a. If the barcode is registered, list
