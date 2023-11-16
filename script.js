@@ -71,17 +71,28 @@ let cartLs = document.getElementById("itemCartLs")
 let barcodeInputs = document.getElementById("barcodeInput")
 let numItems = document.getElementById("numOfItems")
 let addToCart = document.getElementById("addCartButton")
+let subtotal = 0;
+let total = subtotal * 1.0925
 
+//2
 function findItem(){
+    //3
     if(numItems <= 0){
+        //3b
         alert("You need to have at least one Item to add it to the cart")
-    }else if(numItems > 0){
-        if(itemsCatalog.hasOwnProperty(barcodeInputs)){
+    }
+    //3a
+    else if(numItems > 0){
+        //3aiA
+        if(itemsCatalog.value.hasOwnProperty(barcodeInputs)){
             //
-        }else{
+        }
+        //3aiB
+        else{
             //
         }
     }else{
+        //3b
         alert("Please input a quantity greater than 0")
     }
 }
@@ -90,15 +101,24 @@ addToCart.addEventListener("click", findItem)
     Replace "It's empty here..." with the cart items
         //1. make too many variables
         //2. make a function to run onclick for add to cart
-        //3. depending on what barcode is inputted,
-             delete cartEmpty text and:
-            //a. If the barcode is registered, list
-                 the Item, Quantity, and Price
-            //b. If not, alert that the barcode isn't
-                 registered
-        //4. 
+        //3. Read the input for number of items
+            //a. determine if there's a positive quantity
+                //i. depending on what barcode is inputted,
+                     delete cartEmpty text and:
+                    //A. If the barcode is registered, list
+                         the Item, Quantity, and Price
+                    //B. If not, alert that the barcode isn't
+                         registered
+            //b. if it's not positive, send alert
+
     As the items are added update the Subtotal
+        //4. Read the "price" item in each of the ?objects?
+        //5. Read quantity
+            //a. multiply quantity by price
+        //6. Add the adjusted amount to (update) the subtotal
+    
     On Checkout print the Total
+        //7. Make element for the total when checkout is clicked
 */
 
 // MEeP
