@@ -77,12 +77,12 @@ let total = subtotal * 1.0925
 //2
 function findItem(){
     //3
-    if(numItems <= 0){
+    if(numItems.value <= 0){
         //3b
         alert("You need to have at least one Item to add it to the cart")
     }
     //3a
-    else if(numItems > 0){
+    else if(numItems.value > 0){
         //3aiA
         if(itemsCatalog.value.hasOwnProperty(barcodeInputs)){
             //
