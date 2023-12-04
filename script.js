@@ -71,10 +71,14 @@ let cartLs = document.getElementById("itemCartLs")
 let barcodeInputs = document.getElementById("barcodeInput")
 let numItems = document.getElementById("numOfItems")
 let addToCart = document.getElementById("addCartButton")
+let totalPelem = document.getElementById("totalPtax")
+let subtotalPelem = document.getElementById("totalStax")
 let subtotal = 0;
-let total = subtotal * 1.0925
+let total = 0;
 
 //2
+
+addToCart.addEventListener("click", findItem);
 function findItem(){
     //3
     if(numItems.value <= 0){
@@ -82,21 +86,65 @@ function findItem(){
         alert("You need to have at least one Item to add it to the cart")
     }
     //3a
-    else if(numItems.value > 0){
+    else{
+        const barcode = barcodeInputs.value;
+        const quantity = parseInt(numItems.value)
         //3aiA
-        if(itemsCatalog.value.hasOwnProperty(barcodeInputs)){
-            //
+        if(itemsCatalog.hasOwnProperty(barcode)){
+            //more variables
+            const item = itemsCatalog[barcode];
+            const itemName = item.itemName;
+            const price = item.price;
+
+            // Check if item is in cart
+            const inCartQ = Array.from(cartLs.children).find(
+                (child) => child.dataset.barcode === barcode
+            );
+
+            if (inCartQ){
+                //update quantity for existing item
+                const currentNum = parseInt(inCartQ.dataset.quantity);
+                const newNum = currentNum + quantity;
+                inCartQ.dataset.quantity = newNum;
+                inCartQ.innerHTML = `${newNum} x ${itemName}: $${(newNum * price).toFixed(2)}`;
+            }else{
+                //new cart item
+                const cartItem = document.createElement("p");
+                cartItem.dataset.barcode = barcode;
+                cartItem.dataset.quantity = quantity;
+                cartItem.innerHTML = `${quantity} x ${itemName}: $${quantity*price.toFixed(2)}<br>`;
+                cartLs.appendChild(cartItem);
+            }
+
+            //Updates Subtotal
+            subtotal += quantity*price;
+
+            //clear input fields
+            barcodeInputs.value = "";
+            numItems.value = "1";
+
+            cartEmptyTxt.innerHTML = "";
         }
         //3aiB
         else{
-            //
+            alert("Barcode not registered");
         }
-    }else{
-        //3b
-        alert("Please input a quantity greater than 0")
+        subtotalPelem.innerHTML = "Subtotal: ";
+        subtotalPelem.innerHTML += `$${subtotal.toFixed(2)}`;
     }
 }
-addToCart.addEventListener("click", findItem)
+
+//
+function checkout(){
+    total = subtotal*1.0925;
+    //display subtotal and total in cart
+    totalPelem.innerHTML += `$${total.toFixed(2)}`;
+    //cartLs.appendChild(totalElement);
+}
+
+//checkout button
+document.getElementById("checkoutButton").addEventListener("click", checkout);
+
 /*
     Replace "It's empty here..." with the cart items
         //1. make too many variables

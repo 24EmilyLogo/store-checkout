@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Checkout</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Checkout</h1>
@@ -14,15 +14,15 @@
         <p>Scan Barcode:</p>
         <input type="text" id="barcodeInput" placeholder="Scan Barcode Here"><br>
         <p>Quantity:</p>
-        <input type="number" id="numOfItems" value="1"><br>
+        <input type="number" id="numOfItems" value="1" min="1"><br>
         <button id="addCartButton">Add to Cart</button>
     </div>
     <h2>Cart</h2>
     <div id="itemCartLs">
         <p id="cartEmpty">It's empty here...</p>
     </div>
-    <p>Subtotal:</p>
+    <p id="totalStax">Subtotal: </p>
     <button id="checkoutButton">Checkout</button>
-    <div id="totalPtax"></div>
+    <p id="totalPtax">Total: </p>
 </body>
 </html>
