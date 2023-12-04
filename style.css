@@ -4,6 +4,10 @@ h1, h2{
 }
 p{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-inline: 20px;
+}
+.nextToInput{
+    margin-right: 5px;
 }
 .addItemArea p{
     display: inline-block;
@@ -16,6 +20,7 @@ button{
     color:white;
     border-radius:5px;
     padding:5px;
+    margin-inline: 15px;
 }
 button:hover{
     background-color: #3fc20f;

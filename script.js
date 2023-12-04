@@ -106,13 +106,13 @@ function findItem(){
                 const currentNum = parseInt(inCartQ.dataset.quantity);
                 const newNum = currentNum + quantity;
                 inCartQ.dataset.quantity = newNum;
-                inCartQ.innerHTML = `${newNum} x ${itemName}: $${(newNum * price).toFixed(2)}`;
+                inCartQ.innerHTML = `${newNum} x ${itemName}: <span style = "float: right;"?> $${(newNum * price).toFixed(2)}</span>`;
             }else{
                 //new cart item
                 const cartItem = document.createElement("p");
                 cartItem.dataset.barcode = barcode;
                 cartItem.dataset.quantity = quantity;
-                cartItem.innerHTML = `${quantity} x ${itemName}: $${quantity*price.toFixed(2)}<br>`;
+                cartItem.innerHTML = `${quantity} x ${itemName}: <span style = "float: right;"?> $${quantity*price.toFixed(2)}<br></span>`;
                 cartLs.appendChild(cartItem);
             }
 
@@ -136,9 +136,10 @@ function findItem(){
 
 //
 function checkout(){
+    totalPelem.innerHTML = "Total: "
     total = subtotal*1.0925;
     //display subtotal and total in cart
-    totalPelem.innerHTML += `$${total.toFixed(2)}`;
+    totalPelem.innerHTML += `$${total.toFixed(2)} (Tax~ 9.25%)`;
     //cartLs.appendChild(totalElement);
 }
 
